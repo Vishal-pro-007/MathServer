@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Mileage calculator</title>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+        .box {
+            width: 600px;
+            margin: 100px auto;
+            background-color: orange;
+            padding: 40px;
+            border:  dotted purple 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Mileage Calculator</h1>
+        <h3>Vishal S (25013120)</h3>
+        <form method="POST">
+            {% csrf_token %}
+            <label>Distance:</label>
+            <input type="number" name="Range" value="{{ km }}">
+            <br><br>
+            <label>Fuel:</label>
+            <input type="number" name="Petrol" value="{{ lit }}">
+            <br><br>
+            <button type="submit">Calculate</button>
+            <br><br>
+            <label>Mileage (KM/Litre):</label>
+            <input type="number" value="{{ mileage }}" readonly> km/l
+        </form>
+    </div>
+</body>
+</html>
